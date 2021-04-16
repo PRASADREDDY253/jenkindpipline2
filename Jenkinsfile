@@ -20,9 +20,20 @@ pipeline {
     }
 
     stage('Deploy') {
-      steps {
-        echo 'This is deploy stage'
-        input(message: 'Do you want to Deploy?', id: 'OK')
+      parallel {
+        stage('Deploy') {
+          steps {
+            echo 'This is deploy stage'
+            input(message: 'Do you want to Deploy?', id: 'OK')
+          }
+        }
+
+        stage('Artifacts') {
+          steps {
+            writeFile(file: 'LogTestFile.txt', text: 'This is automated log file.')
+          }
+        }
+
       }
     }
 
