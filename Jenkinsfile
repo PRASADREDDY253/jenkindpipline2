@@ -31,6 +31,7 @@ pipeline {
         stage('Artifacts') {
           steps {
             writeFile(file: 'LogTestFile.txt', text: 'This is automated log file.')
+            archiveArtifacts 'LogTestFile.txt'
           }
         }
 
