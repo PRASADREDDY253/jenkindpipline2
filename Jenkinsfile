@@ -28,9 +28,9 @@ pipeline {
           }
         }
 
-        stage('Artifacts') {
+        stage('Artifacts') {          
           steps {
-            writeFile(file: 'LogTestFile.txt', text: 'This is automated log file.')
+            writeFile(file: 'LogTestFile.txt', text: "This is automated log file and env is ${env2}.")
             archiveArtifacts 'LogTestFile.txt'
           }
         }
