@@ -25,4 +25,7 @@ pipeline {
     }
 
   }
+  environment {
+    env = 'DEMO'
+  }
 }
