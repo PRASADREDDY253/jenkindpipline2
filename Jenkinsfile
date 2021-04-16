@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'This is testing phase'
-            echo 'Current Environment is ${env}'
+            echo "Current Environment is ${env}"
           }
         }
 
